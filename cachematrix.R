@@ -3,8 +3,8 @@
 makeCacheMatrix <- function(x = matrix()) {
 m<-NULL
   set<-function(y){
-    x<<-y 
-    m<<-NULL
+    x<<-y         ##To cache the input matrix
+    m<<-NULL      ##To set the value of inverse matrix cache(if used) to null
   }
   get<-function() x
   setmatrix<-function(solve) m<<- solve
@@ -23,8 +23,8 @@ m<-x$getmatrix()
     return(m)
   }
   matrix<-x$get()
-  m<-solve(matrix, ...)
-  x$setmatrix(m)
-  m
+  m<-solve(matrix, ...)   ##Calcute inverse matrix
+  x$setmatrix(m)  ##Cache inverse matrix
+  m   #return the inverse matrix
         
 }
